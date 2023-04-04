@@ -22,7 +22,6 @@ numbers.forEach((number) => {
     number.addEventListener('click', () =>{
         inputNumber(event.target.value);
         updateScreen(currentNumber);
-        console.log(event.target.value);
     });
 });
 const inputNumber = (number) => {

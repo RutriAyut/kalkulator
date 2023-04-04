@@ -24,7 +24,6 @@ numbers.forEach((number) => {
     number.addEventListener('click', () =>{
         inputNumber(event.target.value);
         updateScreen(tampilan);
-        console.log(event.target.value);
     });
 });
 const inputNumber = (number) => {
@@ -54,10 +53,11 @@ operators.forEach((operator) =>{
 const inputOperator = (operator) => {
     if(CalculationOperator === '') {
         prevNumber = currentNumber;
+        tampilan += ` ${operator} `;
     }
     CalculationOperator = operator;
     currentNumber = '0';
-    tampilan += ` ${operator} `;
+    tampilan = currentNumber + ` ${operator} `;
 };
 
 //Ketika = diklik
@@ -122,5 +122,4 @@ percentage.addEventListener('click', () => {
     currentNumber = result;
     tampilan = `${prevNumber} ${CalculationOperator} ${result}`;
     updateScreen(tampilan);
-    console.log(result);
 });
